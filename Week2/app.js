@@ -89,7 +89,10 @@ console.log(heighstNum2);
 // 5-Log your array:
    console.log(animals);
 //6-Add a statement that adds Daan's favorite animal
+  // 1-The first solution:
   animals.push('baby pig');
+  // 2-Second solution:
+  animals.splice(animals.length, 0, 'horse');
 // 7-Log your new array!
   console.log(animals);
   
