@@ -133,28 +133,16 @@ console.log(`The type of variable booleanVal is a ${typeof booleanVal}`);
 console.log(`The type of variable undefVal is a ${typeof undefVal}`);
    
 //Now compare the types of your different variables with one another:
-// I know it is not DRY at all... But I'll do less than now in the nearest future!
-  if (typeof number === typeof myString2) {
-       console.log('The variable number and variable myString2 are the same type!');  
+// The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
 
-  }else if(typeof number === typeof booleanVal){
-       console.log('The variable number and variable booleanVal are the same type!');  
+const dataType1 = [`${typeof number}`, `${typeof myString2}`];
+const dataType2 = [`${typeof booleanVal}`, `${typeof undefVal}`];
 
-  }else if(typeof number === typeof undefVal) {
-       console.log('The variable number and variable undefVal are the same type!');
+const dataTypeChecked = dataType1.map(type => {
+      return dataType2.indexOf(type) >= 0 ? "Are the same type!" : "Are NOT the same type!"
+})[0];
 
-  }else if (typeof myString2 === typeof booleanVal) {
-       console.log('The variable myString2 and variable booleanVal are the same type!');
-
-  }else if(typeof myString2 === typeof undefVal) {
-       console.log('The variable myString2 and variable undefVal are the same type!');
-
-  }else if(typeof booleanVal === typeof undefVal) {
-       console.log('The variable booleanVal and variable undefVal are the same type!');
-}else {
-     console.log("Are not the same Type!");   
-}
-
+console.log(dataTypeChecked);
 
 
 // 9-If x equals 7, and the only other statement is x = x % 3, what would be the new value of x?
