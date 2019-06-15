@@ -181,7 +181,8 @@ function colorFactory(name) {
 colorFactory('Shyar');
 
 //Can you compare infinities? (Not in Eyad's world) - does 6/0 === 10/0? How can you test this?
-// We can compare infinities by using isFinite() function or by if statement:
+// We can compare infinities by using isFinite() function or if statement under certain conditions, defined in the parentheses 
+//that do the comparison with the Strict Equality Operator (===):
 
 if (6/0 === Infinity && 10/0 === Infinity) {
   console.log("Numbers are infinities!");
