@@ -279,7 +279,7 @@ console.log(z == y);// outputs true
 // When comparing two arrays Z and Y we are pointing to the same location in the memory.
 // Therefore, outputs true.
 console.log(z == x); //outputs false
-// As we are copying array Y into variable Z a new location is not created, we are pointing to the same location of Y
+// When comparing Z to X we are pointing to the different location in memory.
 // So we have two different objects in two different location.
 // Therefore, outputs false.
 
