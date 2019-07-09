@@ -103,8 +103,8 @@ const person = {
     interests: ['music', ' swimming'],
 };
 
-const getKyeAndValues = obj => Object.keys(obj).map((item, i) => `${i+1}-${item}: ${obj[item]}\n\n`).join('');
-console.log(getKyeAndValues(person));
+const getKeyAndValues = obj => Object.keys(obj).map((item, i) => `${i+1}-${item}: ${obj[item]}\n\n`).join('');
+console.log(getKeyAndValues(person));
 
 
 
@@ -148,16 +148,33 @@ console.log(3 === 3 ? "Yes" : "No");
 
 // 6.Create a function called vehicle, like before, 
 //but takes another parameter called age, so that vehicle("blue", 1, 5) prints 'a blue used car'
+// first solution:
+// const vehicle1 = (color, code, age) => {
+//     return code === 1 && age > 0 ? `A ${color} used car` : 
+//            code === 2 && age > 0 ? `A ${color} used motorbike` :
+//            code === 1 && age === 0 ? `A ${color} new car` :
+//            code === 2 && age === 0 ? `A ${color} new motorbike` :
+//           "We don't have such a vehicle!"
+// };
 
+// second solution:
 const vehicle1 = (color, code, age) => {
-    return code === 1 && age > 0 ? `A ${color} used car` : 
-           code === 2 && age > 0 ? `A ${color} used motorbike` :
-           code === 1 && age === 0 ? `A ${color} new car` :
-           code === 2 && age === 0 ? `A ${color} new motorbike` :
-          "We don't have such a vehicle!"
+  let type;
+  const condition = age > 0 ? 'used' : 'new';
+  if (code === 1) {
+    type = 'car';
+    return `A ${color} ${condition} ${type}`;
+  } else if (code === 2) {
+    type = 'motorbike';
+    return `A ${color} ${condition} ${type}`;
+  } else {
+    return "We don't have such a vehicle!";
+  }
 };
 
-console.log(vehicle1("gray", 1, 1));
+console.log(vehicle1('gray', 1, 1));
+
+console.log(vehicle1("red", 2, 0));
 
 
 // 7.Make a list of vehicles, you can add "motorbike", "caravan", "bike", or more.
